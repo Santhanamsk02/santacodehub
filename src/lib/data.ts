@@ -3,8 +3,6 @@ export type Course = {
   title: string;
   description: string;
   progress: number;
-  imageUrl: string;
-  imageHint: string;
 };
 
 export type Topic = {
@@ -26,35 +24,27 @@ export type SubTopic = {
 export const courses: Course[] = [
   {
     id: 'java-basics',
-    title: 'Java Basics for Elves',
+    title: 'Java Fundamentals',
     description: 'Learn the fundamentals of Java programming from scratch.',
     progress: 65,
-    imageUrl: 'https://picsum.photos/seed/java/600/400',
-    imageHint: 'abstract code',
   },
   {
-    id: 'c-for-reindeer',
-    title: 'C for Reindeer',
-    description: 'Master the C language to optimize sleigh routes.',
+    id: 'c-programming',
+    title: 'C Programming Mastery',
+    description: 'Master the C language for high-performance applications.',
     progress: 30,
-    imageUrl: 'https://picsum.photos/seed/reindeer/600/400',
-    imageHint: 'winter forest',
   },
   {
     id: 'data-structures',
-    title: 'Data Structures & Presents',
-    description: 'Efficiently organize and manage millions of presents.',
+    title: 'Data Structures & Algorithms',
+    description: 'Efficiently organize and manage complex data structures.',
     progress: 90,
-    imageUrl: 'https://picsum.photos/seed/presents/600/400',
-    imageHint: 'gift boxes',
   },
   {
-    id: 'web-dev-workshop',
-    title: 'Web Dev Workshop',
-    description: "Build beautiful websites for Santa's workshop.",
+    id: 'web-dev',
+    title: 'Full-Stack Web Development',
+    description: 'Build modern, responsive websites and web applications.',
     progress: 15,
-    imageUrl: 'https://picsum.photos/seed/workshop/600/400',
-    imageHint: 'laptop desk',
   },
 ];
 
@@ -63,8 +53,8 @@ export const topics: Topic[] = [
   { id: 'jb-2', courseId: 'java-basics', title: 'Variables and Data Types' },
   { id: 'jb-3', courseId: 'java-basics', title: 'Control Flow' },
 
-  { id: 'cr-1', courseId: 'c-for-reindeer', title: 'Getting Started with C' },
-  { id: 'cr-2', courseId: 'c-for-reindeer', title: 'Pointers and Memory' },
+  { id: 'cr-1', courseId: 'c-programming', title: 'Getting Started with C' },
+  { id: 'cr-2', courseId: 'c-programming', title: 'Pointers and Memory' },
 ];
 
 export const subTopics: SubTopic[] = [

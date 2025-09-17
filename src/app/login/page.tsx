@@ -18,7 +18,7 @@ export default function LoginPage() {
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (email === 'admin@procode.com' && password === 'admin123') {
+    if (email === 'admin@santacodehub.com' && password === 'admin123') {
       router.push('/admin');
     } else if (email && password) {
       router.push('/courses');

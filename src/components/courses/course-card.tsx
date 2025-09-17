@@ -13,7 +13,7 @@ export function CourseCard({ course }: { course: Course }) {
         </CardHeader>
         <CardContent className="flex-grow" />
         <CardFooter className="pt-4">
-          <Button className="w-full neumorphic-button bg-foreground text-background hover:bg-foreground/90">
+          <Button className="w-full neumorphic-button bg-background text-foreground hover:bg-background/90">
             Study Now
           </Button>
         </CardFooter>

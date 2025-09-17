@@ -1,4 +1,3 @@
-'use client';
 import { subTopics, topics, courses } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { SubTopicCard } from '@/components/courses/subtopic-card';

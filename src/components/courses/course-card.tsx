@@ -2,7 +2,6 @@ import Link from 'next/link';
 import type { Course } from '@/lib/data';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 
 export function CourseCard({ course }: { course: Course }) {
   return (
@@ -12,12 +11,7 @@ export function CourseCard({ course }: { course: Course }) {
           <CardTitle className="text-lg font-bold font-headline mb-1">{course.title}</CardTitle>
           <CardDescription className="text-sm">{course.description}</CardDescription>
         </CardHeader>
-        <CardContent className="flex-grow flex flex-col justify-end">
-          <div>
-            <p className="text-xs text-muted-foreground mb-1">{course.progress}% complete</p>
-            <Progress value={course.progress} className="h-2 neumorphic-inset" />
-          </div>
-        </CardContent>
+        <CardContent className="flex-grow" />
         <CardFooter className="pt-4">
           <Button className="w-full neumorphic-button bg-foreground text-background hover:bg-foreground/90">
             Study Now

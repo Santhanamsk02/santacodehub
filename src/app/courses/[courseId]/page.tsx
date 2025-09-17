@@ -28,7 +28,10 @@ export default function CoursePage({ params }: CoursePageProps) {
 
   useEffect(() => {
     if(courseTopics.length > 0) {
-      setActiveTopic(courseTopics[0]);
+      const defaultTopic = courseTopics[0];
+      if(defaultTopic) {
+        setActiveTopic(defaultTopic);
+      }
     }
   }, [params.courseId]);
 
@@ -78,7 +81,7 @@ export default function CoursePage({ params }: CoursePageProps) {
           <UserNav />
         </header>
         <main className="flex-1 p-4 sm:p-6">
-          <CourseContent subTopics={activeSubTopics} />
+          <CourseContent subTopics={activeSubTopics} course={course} />
         </main>
       </div>
     </div>

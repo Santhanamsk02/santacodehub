@@ -12,7 +12,7 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
   const [language, setLanguage] = useState<'english' | 'tanglish'>('english');
 
   return (
-    <Card className="neumorphic-outset border-none">
+    <Card className="neumorphic-outset border-none overflow-hidden">
       <CardHeader>
         <div className="flex justify-between items-center">
           <CardTitle className="font-headline">{subTopic.title}</CardTitle>
@@ -27,6 +27,16 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
           </div>
         </div>
       </CardHeader>
+      <div className="px-6 pb-6">
+        <Image 
+            src={subTopic.imageUrl} 
+            alt={subTopic.title}
+            width={600}
+            height={400}
+            className="rounded-md w-full neumorphic-inset p-2"
+            data-ai-hint="abstract illustration"
+            />
+      </div>
       <CardContent className="space-y-6">
         <div className="prose dark:prose-invert max-w-none">
           <p className="text-foreground/90">
@@ -37,20 +47,6 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
         <div>
           <h3 className="text-lg font-semibold mb-2 font-headline">Code Example</h3>
           <CodeSnippet javaCode={subTopic.codeJava} cCode={subTopic.codeC} />
-        </div>
-        <Separator className='bg-border/50'/>
-        <div>
-           <h3 className="text-lg font-semibold mb-4 font-headline">Visual Concept</h3>
-           <div className="neumorphic-inset p-2 rounded-lg">
-             <Image 
-                src={subTopic.imageUrl} 
-                alt={subTopic.title}
-                width={600}
-                height={400}
-                className="rounded-md w-full"
-                data-ai-hint="abstract illustration"
-              />
-            </div>
         </div>
       </CardContent>
     </Card>

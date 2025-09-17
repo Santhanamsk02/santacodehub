@@ -20,7 +20,7 @@ export function SubTopicGridCard({ subTopic, courseId }: SubTopicGridCardProps) 
         <CardContent className="flex-grow">
             <CardDescription>{shortDescription}</CardDescription>
         </CardContent>
-        <CardFooter className="pt-4 bg-muted/50">
+        <CardFooter className="pt-4">
           <Button variant="secondary" className="w-full">
             Study Topic
           </Button>

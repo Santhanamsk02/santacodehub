@@ -1,3 +1,4 @@
+'use client';
 import { subTopics, topics, courses } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { SubTopicCard } from '@/components/courses/subtopic-card';
@@ -12,6 +13,16 @@ type SubTopicPageProps = {
         subTopicId: string;
     };
 };
+
+export async function generateStaticParams() {
+    return subTopics.map(subTopic => {
+        const topic = topics.find(t => t.id === subTopic.topicId);
+        return {
+            courseId: topic?.courseId,
+            subTopicId: subTopic.id
+        }
+    }).filter(params => params.courseId);
+}
 
 export default function SubTopicPage({ params }: SubTopicPageProps) {
     const subTopic = subTopics.find(st => st.id === params.subTopicId);

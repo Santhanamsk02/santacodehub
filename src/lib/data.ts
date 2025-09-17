@@ -2,7 +2,6 @@ export type Course = {
   id: string;
   title: string;
   description: string;
-  progress: number;
 };
 
 export type Topic = {
@@ -27,25 +26,21 @@ export const courses: Course[] = [
     id: 'java-basics',
     title: 'Java Fundamentals',
     description: 'Learn the fundamentals of Java programming from scratch.',
-    progress: 65,
   },
   {
     id: 'python-basics',
     title: 'Python for Beginners',
     description: 'Start your programming journey with Python.',
-    progress: 30,
   },
   {
     id: 'data-structures',
     title: 'Data Structures & Algorithms',
     description: 'Efficiently organize and manage complex data structures.',
-    progress: 90,
   },
   {
     id: 'web-dev',
     title: 'Full-Stack Web Development',
     description: 'Build modern, responsive websites and web applications.',
-    progress: 15,
   },
 ];
 
@@ -55,6 +50,8 @@ export const topics: Topic[] = [
   { id: 'jb-3', courseId: 'java-basics', title: 'Control Flow' },
 
   { id: 'pb-1', courseId: 'python-basics', title: 'Introduction to Python' },
+
+  { id: 'ds-1', courseId: 'data-structures', title: 'Array' },
 ];
 
 export const subTopics: SubTopic[] = [
@@ -87,5 +84,65 @@ export const subTopics: SubTopic[] = [
     codeJava: `// This is Java, not Python\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("This is Java!");\n    }\n}`,
     codePython: `# This is a comment in Python\nprint("Hello from Python!")`,
     imageUrl: 'https://picsum.photos/seed/python-program/600/400',
+  },
+  {
+    id: 'st-ds-1-1',
+    topicId: 'ds-1',
+    title: 'Array Creation',
+    contentEn: 'An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together.',
+    contentTl: 'Array endrathu ore maathiriyana items-ah thodarndhu memory-la store panradhu. ',
+    codeJava: `int[] myArray = new int[5]; // Creates an array of 5 integers\nString[] names = {"John", "Doe"}; // Creates and initializes an array`,
+    codePython: `my_array = [0] * 5  # Creates a list of 5 zeros\nnames = ["John", "Doe"] # Creates and initializes a list`,
+    imageUrl: 'https://picsum.photos/seed/array-creation/600/400',
+  },
+  {
+    id: 'st-ds-1-2',
+    topicId: 'ds-1',
+    title: 'Insertion',
+    contentEn: 'Insertion adds an element at a given index. This requires shifting all subsequent elements to the right.',
+    contentTl: 'Insertion oru element-ah kudutha index-la add pannum. Ithuku pinnadi irukura ella elements-ayum valadhu pakkam nagathanum.',
+    codeJava: `// Assuming an array with enough capacity\nint[] arr = new int[10];\narr[0] = 1; arr[1] = 2;\nint insertIndex = 1;\nint newValue = 99;\n// Shift elements\nfor (int i = 2; i > insertIndex; i--) {\n    arr[i] = arr[i - 1];\n}\narr[insertIndex] = newValue;`,
+    codePython: `my_list = [1, 2, 3]\nmy_list.insert(1, 99) # Inserts 99 at index 1\n# my_list is now [1, 99, 2, 3]`,
+    imageUrl: 'https://picsum.photos/seed/array-insertion/600/400',
+  },
+  {
+    id: 'st-ds-1-3',
+    topicId: 'ds-1',
+    title: 'Deletion',
+    contentEn: 'Deletion removes an element from a given index. This requires shifting all subsequent elements to the left.',
+    contentTl: 'Deletion oru element-ah kudutha index-la irundhu remove pannum. Ithuku pinnadi irukura ella elements-ayum edhadhu pakkam nagathanum.',
+    codeJava: `// Assuming an array [1, 99, 2]\nint[] arr = {1, 99, 2};\nint deleteIndex = 1;\n// Shift elements\nfor (int i = deleteIndex; i < arr.length - 1; i++) {\n    arr[i] = arr[i + 1];\n}\n// Last element can be set to a default value like 0`,
+    codePython: `my_list = [1, 99, 2, 3]\nmy_list.pop(1) # Removes element at index 1\ndel my_list[1] # Another way to delete\n# my_list is now [1, 3]`,
+    imageUrl: 'https://picsum.photos/seed/array-deletion/600/400',
+  },
+  {
+    id: 'st-ds-1-4',
+    topicId: 'ds-1',
+    title: 'Traversal',
+    contentEn: 'Traversal is the process of visiting each element in the array exactly once.',
+    contentTl: 'Traversal-na array-la irukura ovvoru element-ayum sariya oru murai visit panradhu.',
+    codeJava: `int[] arr = {1, 2, 3, 4, 5};\nfor (int i = 0; i < arr.length; i++) {\n    System.out.println(arr[i]);\n}\n// Using enhanced for loop\nfor (int element : arr) {\n    System.out.println(element);\n}`,
+    codePython: `my_list = [1, 2, 3, 4, 5]\nfor element in my_list:\n    print(element)`,
+    imageUrl: 'https://picsum.photos/seed/array-traversal/600/400',
+  },
+  {
+    id: 'st-ds-1-5',
+    topicId: 'ds-1',
+    title: 'Left Rotation',
+    contentEn: 'A left rotation operation on an array shifts each of the array\'s elements one unit to the left.',
+    contentTl: 'Oru array-la left rotation operation panna, ovvoru element-um oru unit edhadhu pakkam nagarum.',
+    codeJava: `void leftRotate(int arr[], int d) {\n    int n = arr.length;\n    int[] temp = new int[d];\n    for (int i = 0; i < d; i++)\n        temp[i] = arr[i];\n    for (int i = d; i < n; i++)\n        arr[i - d] = arr[i];\n    for (int i = 0; i < d; i++)\n        arr[i + n - d] = temp[i];\n}`,
+    codePython: `def left_rotate(arr, d):\n    n = len(arr)\n    d = d % n\n    return arr[d:] + arr[:d]`,
+    imageUrl: 'https://picsum.photos/seed/left-rotation/600/400',
+  },
+  {
+    id: 'st-ds-1-6',
+    topicId: 'ds-1',
+    title: 'Right Rotation',
+    contentEn: 'A right rotation operation on an array shifts each of the array\'s elements one unit to the right.',
+    contentTl: 'Oru array-la right rotation operation panna, ovvoru element-um oru unit valadhu pakkam nagarum.',
+    codeJava: `void rightRotate(int arr[], int d) {\n    int n = arr.length;\n    d = d % n;\n    int[] temp = new int[n - d];\n    for (int i = 0; i < n - d; i++)\n        temp[i] = arr[i];\n    for (int i = n - d; i < n; i++)\n        arr[i - (n - d)] = arr[i];\n    for (int i = 0; i < n - d; i++)\n        arr[i + d] = temp[i];\n}`,
+    codePython: `def right_rotate(arr, d):\n    n = len(arr)\n    d = d % n\n    return arr[n-d:] + arr[:n-d]`,
+    imageUrl: 'https://picsum.photos/seed/right-rotation/600/400',
   },
 ];

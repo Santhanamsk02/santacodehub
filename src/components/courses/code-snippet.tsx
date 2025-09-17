@@ -28,21 +28,21 @@ export function CodeSnippet({ javaCode, pythonCode }: CodeSnippetProps) {
     <div className="relative">
       <Tabs defaultValue="java" onValueChange={setActiveTab} className="w-full">
         <div className="flex justify-between items-center mb-2">
-          <TabsList className="neumorphic-inset p-1 bg-transparent">
-            <TabsTrigger value="java" className="data-[state=active]:neumorphic-outset data-[state=active]:bg-primary/20 data-[state=active]:shadow-none">Java</TabsTrigger>
-            <TabsTrigger value="python" className="data-[state=active]:neumorphic-outset data-[state=active]:bg-primary/20 data-[state=active]:shadow-none">Python</TabsTrigger>
+          <TabsList>
+            <TabsTrigger value="java">Java</TabsTrigger>
+            <TabsTrigger value="python">Python</TabsTrigger>
           </TabsList>
-          <Button variant="ghost" size="icon" onClick={copyToClipboard} className="neumorphic-button" aria-label="Copy code">
+          <Button variant="ghost" size="icon" onClick={copyToClipboard} aria-label="Copy code">
             <Clipboard className="h-4 w-4" />
           </Button>
         </div>
         <TabsContent value="java">
-          <pre className="neumorphic-inset p-4 rounded-lg overflow-x-auto text-sm">
+          <pre className="bg-muted rounded-lg p-4 overflow-x-auto text-sm">
             <code>{javaCode}</code>
           </pre>
         </TabsContent>
         <TabsContent value="python">
-          <pre className="neumorphic-inset p-4 rounded-lg overflow-x-auto text-sm">
+          <pre className="bg-muted rounded-lg p-4 overflow-x-auto text-sm">
             <code>{pythonCode}</code>
           </pre>
         </TabsContent>

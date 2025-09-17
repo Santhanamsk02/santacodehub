@@ -13,15 +13,15 @@ export function SubTopicGridCard({ subTopic, courseId }: SubTopicGridCardProps) 
 
   return (
     <Link href={`/courses/${courseId}/${subTopic.id}`} className="block group">
-      <Card className="neumorphic-outset border-none overflow-hidden h-full flex flex-col transition-transform group-hover:-translate-y-1">
+      <Card className="border overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
         <CardHeader>
           <CardTitle className="text-lg font-bold font-headline mb-1">{subTopic.title}</CardTitle>
         </CardHeader>
         <CardContent className="flex-grow">
             <CardDescription>{shortDescription}</CardDescription>
         </CardContent>
-        <CardFooter className="pt-4">
-          <Button className="w-full neumorphic-button bg-background text-foreground hover:bg-background/90">
+        <CardFooter className="pt-4 bg-muted/50">
+          <Button variant="secondary" className="w-full">
             Study Topic
           </Button>
         </CardFooter>

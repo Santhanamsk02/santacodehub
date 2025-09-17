@@ -31,7 +31,7 @@ export function AdminNav() {
     return (
         <nav className="flex-1 p-4 space-y-2">
             {navItems.map(item => (
-                <Button key={item.view} variant="ghost" asChild className={cn('w-full justify-start', activeView === item.view && 'neumorphic-inset bg-primary/10')}>
+                <Button key={item.view} variant="ghost" asChild className={cn('w-full justify-start', activeView === item.view && 'bg-muted')}>
                     <Link href={`/admin?view=${item.view}`}>
                         <item.icon className="mr-2 h-4 w-4" />
                         {item.label}

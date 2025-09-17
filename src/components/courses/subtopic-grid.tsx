@@ -8,9 +8,11 @@ type SubTopicGridProps = {
 
 export function SubTopicGrid({ subTopics, courseId }: SubTopicGridProps) {
   return (
-    <div className="grid grid-cols-1 gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {subTopics.map((subTopic) => (
-        <SubTopicGridCard key={subTopic.id} subTopic={subTopic} courseId={courseId} />
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {subTopics.map((subTopic, index) => (
+        <div key={subTopic.id} className="fade-in-up" style={{ animationDelay: `${index * 100}ms`}}>
+            <SubTopicGridCard subTopic={subTopic} courseId={courseId} />
+        </div>
       ))}
     </div>
   );

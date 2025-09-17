@@ -14,7 +14,7 @@ type SidebarProps = {
 
 export function CourseTopicSidebar({ topics, courseTitle, activeTopic, setActiveTopic }: SidebarProps) {
   return (
-    <aside className="flex flex-col w-full h-screen neumorphic-outset md:border-r">
+    <aside className="flex flex-col w-full h-screen bg-background md:border-r">
       <div className="p-4 border-b">
         <Button variant="ghost" asChild className="mb-4">
           <Link href="/courses">
@@ -32,8 +32,8 @@ export function CourseTopicSidebar({ topics, courseTitle, activeTopic, setActive
               variant="ghost"
               onClick={() => setActiveTopic(topic)}
               className={cn(
-                'w-full justify-start h-auto py-3 text-left neumorphic-button',
-                activeTopic?.id === topic.id ? 'neumorphic-inset bg-primary/20' : ''
+                'w-full justify-start h-auto py-3 text-left',
+                activeTopic?.id === topic.id ? 'bg-muted' : ''
               )}
             >
               {topic.title}

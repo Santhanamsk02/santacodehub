@@ -26,7 +26,7 @@ export default function AdminPage() {
         switch (activeView) {
             case 'add-course':
                 return (
-                    <Card className="neumorphic-outset w-full max-w-2xl">
+                    <Card className="w-full max-w-2xl">
                         <CardHeader>
                             <CardTitle>Add New Course</CardTitle>
                             <CardDescription>Create a new course to be displayed.</CardDescription>
@@ -34,19 +34,19 @@ export default function AdminPage() {
                         <CardContent className="space-y-4">
                             <div className="space-y-2">
                                 <Label htmlFor="course-title">Course Title</Label>
-                                <Input id="course-title" placeholder="e.g. Python for Beginners" className="neumorphic-inset"/>
+                                <Input id="course-title" placeholder="e.g. Python for Beginners" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="course-desc">Course Description</Label>
-                                <Textarea id="course-desc" placeholder="A brief summary of the course." className="neumorphic-inset"/>
+                                <Textarea id="course-desc" placeholder="A brief summary of the course." />
                             </div>
-                            <Button className="w-full neumorphic-button">Add Course</Button>
+                            <Button className="w-full">Add Course</Button>
                         </CardContent>
                     </Card>
                 );
             case 'add-topic':
                 return (
-                    <Card className="neumorphic-outset w-full max-w-2xl">
+                    <Card className="w-full max-w-2xl">
                         <CardHeader>
                             <CardTitle>Add New Topic</CardTitle>
                             <CardDescription>Add a new topic to an existing course.</CardDescription>
@@ -54,23 +54,23 @@ export default function AdminPage() {
                         <CardContent className="space-y-4">
                             <div className="space-y-2">
                                 <Label htmlFor="topic-title">Topic Title</Label>
-                                <Input id="topic-title" placeholder="e.g. Introduction to Python" className="neumorphic-inset"/>
+                                <Input id="topic-title" placeholder="e.g. Introduction to Python" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="course-select-for-topic">Course</Label>
-                                <select id="course-select-for-topic" className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
+                                <select id="course-select-for-topic" className="w-full p-2 border rounded-md bg-transparent">
                                     {courses.map(course => (
                                         <option key={course.id} value={course.id}>{course.title}</option>
                                     ))}
                                 </select>
                             </div>
-                            <Button className="w-full neumorphic-button">Add Topic</Button>
+                            <Button className="w-full">Add Topic</Button>
                         </CardContent>
                     </Card>
                 );
             case 'add-sub-topic':
                 return (
-                    <Card className="neumorphic-outset w-full max-w-2xl">
+                    <Card className="w-full max-w-2xl">
                         <CardHeader>
                             <CardTitle>Add New Sub-Topic</CardTitle>
                             <CardDescription>Add a detailed lesson to a topic.</CardDescription>
@@ -78,11 +78,11 @@ export default function AdminPage() {
                         <CardContent className="space-y-4">
                             <div className="space-y-2">
                                 <Label htmlFor="subtopic-title">Sub-Topic Title</Label>
-                                <Input id="subtopic-title" placeholder="e.g. Python Syntax" className="neumorphic-inset"/>
+                                <Input id="subtopic-title" placeholder="e.g. Python Syntax" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="course-select-for-subtopic">Course</Label>
-                                <select id="course-select-for-subtopic" onChange={handleCourseChange} value={selectedCourse} className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
+                                <select id="course-select-for-subtopic" onChange={handleCourseChange} value={selectedCourse} className="w-full p-2 border rounded-md bg-transparent">
                                     {courses.map(course => (
                                         <option key={course.id} value={course.id}>{course.title}</option>
                                     ))}
@@ -90,7 +90,7 @@ export default function AdminPage() {
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="topic-select">Topic</Label>
-                                <select id="topic-select" className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
+                                <select id="topic-select" className="w-full p-2 border rounded-md bg-transparent">
                                     {filteredTopics.map(topic => (
                                         <option key={topic.id} value={topic.id}>{topic.title}</option>
                                     ))}
@@ -98,25 +98,25 @@ export default function AdminPage() {
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="subtopic-content-en">Content (English)</Label>
-                                <Textarea id="subtopic-content-en" placeholder="Lesson content in English." className="neumorphic-inset"/>
+                                <Textarea id="subtopic-content-en" placeholder="Lesson content in English." />
                             </div>
                              <div className="space-y-2">
                                 <Label htmlFor="subtopic-content-tl">Content (Tanglish)</Label>
-                                <Textarea id="subtopic-content-tl" placeholder="Lesson content in Tanglish." className="neumorphic-inset"/>
+                                <Textarea id="subtopic-content-tl" placeholder="Lesson content in Tanglish." />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="subtopic-code-java">Java Code</Label>
-                                <Textarea id="subtopic-code-java" placeholder="```java\n// your code here\n```" className="neumorphic-inset"/>
+                                <Textarea id="subtopic-code-java" placeholder="```java\n// your code here\n```" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="subtopic-code-python">Python Code</Label>
-                                <Textarea id="subtopic-code-python" placeholder="'''python\n# your code here\n'''" className="neumorphic-inset"/>
+                                <Textarea id="subtopic-code-python" placeholder="'''python\n# your code here\n'''" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="subtopic-image-url">Image URL</Label>
-                                <Input id="subtopic-image-url" placeholder="https://example.com/image.png" className="neumorphic-inset"/>
+                                <Input id="subtopic-image-url" placeholder="https://example.com/image.png" />
                             </div>
-                            <Button className="w-full neumorphic-button">Add Sub-Topic</Button>
+                            <Button className="w-full">Add Sub-Topic</Button>
                         </CardContent>
                     </Card>
                 );

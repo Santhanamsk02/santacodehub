@@ -12,7 +12,7 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
   const [language, setLanguage] = useState<'english' | 'tanglish'>('english');
 
   return (
-    <Card className="neumorphic-outset border-none overflow-hidden">
+    <Card className="overflow-hidden">
       <CardHeader>
         <div className="flex justify-between items-center">
           <CardTitle className="font-headline">{subTopic.title}</CardTitle>
@@ -33,7 +33,7 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
             alt={subTopic.title}
             width={600}
             height={400}
-            className="rounded-md w-full neumorphic-inset p-2"
+            className="rounded-lg w-full border p-1"
             data-ai-hint="abstract illustration"
             />
       </div>
@@ -43,7 +43,7 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
             {language === 'english' ? subTopic.contentEn : subTopic.contentTl}
           </p>
         </div>
-        <Separator className='bg-border/50'/>
+        <Separator/>
         <div>
           <h3 className="text-lg font-semibold mb-2 font-headline">Code Example</h3>
           <CodeSnippet javaCode={subTopic.codeJava} pythonCode={subTopic.codePython} />

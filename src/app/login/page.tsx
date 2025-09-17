@@ -32,12 +32,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-4">
+    <div className="flex min-h-screen items-center justify-center bg-muted/40 p-4">
       <main className="flex items-center justify-center w-full">
-        <Card className="w-full max-w-md neumorphic-outset border-none">
+        <Card className="w-full max-w-md">
           <CardHeader className="space-y-1 text-center">
-            <div className="inline-block mx-auto p-4 bg-primary/20 rounded-full neumorphic-inset mb-4">
-              <GraduationCap className="h-10 w-10 text-primary" />
+            <div className="inline-block mx-auto p-3 bg-primary text-primary-foreground rounded-full mb-4">
+              <GraduationCap className="h-10 w-10" />
             </div>
             <CardTitle className="text-3xl font-bold font-headline">SantaCodeHub</CardTitle>
             <CardDescription>Enter your credentials to access your coding journey</CardDescription>
@@ -51,7 +51,6 @@ export default function LoginPage() {
                   type="email" 
                   placeholder="m@example.com" 
                   required 
-                  className="neumorphic-inset" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -64,12 +63,11 @@ export default function LoginPage() {
                   id="password" 
                   type="password" 
                   required 
-                  className="neumorphic-inset" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <Button type="submit" className="w-full neumorphic-button bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button type="submit" className="w-full">
                 Login
               </Button>
             </form>

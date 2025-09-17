@@ -4,8 +4,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { courses, topics } from "@/lib/data";
+
 
 export default function AdminPage() {
+    const [selectedCourse, setSelectedCourse] = useState<string>(courses[0]?.id || '');
+
+    const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedCourse(e.target.value);
+    }
+
+    const filteredTopics = topics.filter(topic => topic.courseId === selectedCourse);
+
     return (
         <div className="container mx-auto py-8">
             <h1 className="text-3xl font-bold font-headline mb-8">Admin Dashboard</h1>
@@ -42,12 +53,11 @@ export default function AdminPage() {
                             <Input id="topic-title" placeholder="e.g. Introduction to Python" className="neumorphic-inset"/>
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="course-select">Course</Label>
-                            <select id="course-select" className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
-                                <option>Java Fundamentals</option>
-                                <option>Python for Beginners</option>
-                                <option>Data Structures & Algorithms</option>
-                                <option>Full-Stack Web Development</option>
+                            <Label htmlFor="course-select-for-topic">Course</Label>
+                            <select id="course-select-for-topic" className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
+                                {courses.map(course => (
+                                    <option key={course.id} value={course.id}>{course.title}</option>
+                                ))}
                             </select>
                         </div>
                         <Button className="w-full neumorphic-button">Add Topic</Button>
@@ -66,11 +76,19 @@ export default function AdminPage() {
                             <Input id="subtopic-title" placeholder="e.g. Python Syntax" className="neumorphic-inset"/>
                         </div>
                          <div className="space-y-2">
+                            <Label htmlFor="course-select-for-subtopic">Course</Label>
+                            <select id="course-select-for-subtopic" onChange={handleCourseChange} value={selectedCourse} className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
+                                {courses.map(course => (
+                                    <option key={course.id} value={course.id}>{course.title}</option>
+                                ))}
+                            </select>
+                        </div>
+                         <div className="space-y-2">
                             <Label htmlFor="topic-select">Topic</Label>
                             <select id="topic-select" className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
-                                <option>Introduction to Java</option>
-                                <option>Variables and Data Types</option>
-                                <option>Introduction to Python</option>
+                                {filteredTopics.map(topic => (
+                                    <option key={topic.id} value={topic.id}>{topic.title}</option>
+                                ))}
                             </select>
                         </div>
                          <div className="space-y-2">
@@ -88,6 +106,10 @@ export default function AdminPage() {
                          <div className="space-y-2">
                             <Label htmlFor="subtopic-code-python">Python Code</Label>
                             <Textarea id="subtopic-code-python" placeholder="'''python\n# your code here\n'''" className="neumorphic-inset"/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="subtopic-image-url">Image URL</Label>
+                            <Input id="subtopic-image-url" placeholder="https://example.com/image.png" className="neumorphic-inset"/>
                         </div>
                         <Button className="w-full neumorphic-button">Add Sub-Topic</Button>
                     </CardContent>

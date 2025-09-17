@@ -45,7 +45,7 @@ export default function AdminPage() {
                             <Label htmlFor="course-select">Course</Label>
                             <select id="course-select" className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
                                 <option>Java Fundamentals</option>
-                                <option>C Programming Mastery</option>
+                                <option>Python for Beginners</option>
                                 <option>Data Structures & Algorithms</option>
                                 <option>Full-Stack Web Development</option>
                             </select>
@@ -70,7 +70,7 @@ export default function AdminPage() {
                             <select id="topic-select" className="w-full p-2 rounded-md neumorphic-inset bg-transparent">
                                 <option>Introduction to Java</option>
                                 <option>Variables and Data Types</option>
-                                <option>Getting Started with C</option>
+                                <option>Introduction to Python</option>
                             </select>
                         </div>
                          <div className="space-y-2">
@@ -86,8 +86,8 @@ export default function AdminPage() {
                             <Textarea id="subtopic-code-java" placeholder="```java\n// your code here\n```" className="neumorphic-inset"/>
                         </div>
                          <div className="space-y-2">
-                            <Label htmlFor="subtopic-code-c">C Code</Label>
-                            <Textarea id="subtopic-code-c" placeholder="```c\n// your code here\n```" className="neumorphic-inset"/>
+                            <Label htmlFor="subtopic-code-python">Python Code</Label>
+                            <Textarea id="subtopic-code-python" placeholder="'''python\n# your code here\n'''" className="neumorphic-inset"/>
                         </div>
                         <Button className="w-full neumorphic-button">Add Sub-Topic</Button>
                     </CardContent>

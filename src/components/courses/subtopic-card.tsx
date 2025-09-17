@@ -46,7 +46,7 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
         <Separator className='bg-border/50'/>
         <div>
           <h3 className="text-lg font-semibold mb-2 font-headline">Code Example</h3>
-          <CodeSnippet javaCode={subTopic.codeJava} cCode={subTopic.codeC} />
+          <CodeSnippet javaCode={subTopic.codeJava} pythonCode={subTopic.codePython} />
         </div>
       </CardContent>
     </Card>

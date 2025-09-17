@@ -18,7 +18,7 @@ export type SubTopic = {
   contentEn: string;
   contentTl: string;
   codeJava: string;
-  codeC: string;
+  codePython: string;
   imageUrl: string;
 };
 
@@ -30,9 +30,9 @@ export const courses: Course[] = [
     progress: 65,
   },
   {
-    id: 'c-programming',
-    title: 'C Programming Mastery',
-    description: 'Master the C language for high-performance applications.',
+    id: 'python-basics',
+    title: 'Python for Beginners',
+    description: 'Start your programming journey with Python.',
     progress: 30,
   },
   {
@@ -54,8 +54,7 @@ export const topics: Topic[] = [
   { id: 'jb-2', courseId: 'java-basics', title: 'Variables and Data Types' },
   { id: 'jb-3', courseId: 'java-basics', title: 'Control Flow' },
 
-  { id: 'cr-1', courseId: 'c-programming', title: 'Getting Started with C' },
-  { id: 'cr-2', courseId: 'c-programming', title: 'Pointers and Memory' },
+  { id: 'pb-1', courseId: 'python-basics', title: 'Introduction to Python' },
 ];
 
 export const subTopics: SubTopic[] = [
@@ -66,7 +65,7 @@ export const subTopics: SubTopic[] = [
     contentEn: 'Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.',
     contentTl: 'Java oru high-level, class-based, object-oriented programming language. Athuku adhigama implementation dependencies irukathu.',
     codeJava: `public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}`,
-    codeC: `// C doesn't have classes in the same way as Java\n// This is a simple C program\n#include <stdio.h>\n\nint main() {\n   printf("Hello, World!");\n   return 0;\n}`,
+    codePython: `print("Hello, World!")`,
     imageUrl: 'https://picsum.photos/seed/java-concept/600/400',
   },
   {
@@ -76,17 +75,17 @@ export const subTopics: SubTopic[] = [
     contentEn: 'In Java, there are eight primitive data types: byte, short, int, long, float, double, boolean, and char.',
     contentTl: 'Java-la, ettu primitive data types iruku: byte, short, int, long, float, double, boolean, and char.',
     codeJava: `int myNum = 5;               // Integer (whole number)\nfloat myFloatNum = 5.99f;    // Floating point number\nchar myLetter = 'D';         // Character\nboolean myBool = true;       // Boolean`,
-    codeC: `int myNum = 5;               // Integer\nfloat myFloatNum = 5.99;     // Float\nchar myLetter = 'D';         // Character\n// C uses 1 for true and 0 for false`,
+    codePython: `my_num = 5               # Integer\nmy_float_num = 5.99    # Float\nmy_letter = 'D'          # String\nmy_bool = True           # Boolean`,
     imageUrl: 'https://picsum.photos/seed/data-types/600/400',
   },
     {
-    id: 'st-cr-1-1',
-    topicId: 'cr-1',
-    title: 'Your First C Program',
-    contentEn: 'The main function is the entry point of every C program. The stdio.h header file provides standard input/output functions, like printf().',
-    contentTl: 'main function thaan ella C program-oda entry point. stdio.h header file-la printf() mathiri standard input/output functions irukum.',
-    codeJava: `// This is Java, not C\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("This is Java!");\n    }\n}`,
-    codeC: `#include <stdio.h>\n\nint main() {\n   printf("Hello from C!");\n   return 0;\n}`,
-    imageUrl: 'https://picsum.photos/seed/c-program/600/400',
+    id: 'st-pb-1-1',
+    topicId: 'pb-1',
+    title: 'Your First Python Program',
+    contentEn: 'The print() function is the easiest way to display output in Python. It prints the specified message to the screen.',
+    contentTl: 'print() function vechu output display panradhu romba easy. Athu sonna message-ah screen-la print pannum.',
+    codeJava: `// This is Java, not Python\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("This is Java!");\n    }\n}`,
+    codePython: `# This is a comment in Python\nprint("Hello from Python!")`,
+    imageUrl: 'https://picsum.photos/seed/python-program/600/400',
   },
 ];

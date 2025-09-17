@@ -1,34 +1,23 @@
-import { Suspense } from 'react';
+'use client';
+import { useState } from 'react';
+import { AdminNav } from './_components/admin-nav';
 import { AdminPageContent } from './_components/admin-page-content';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Logo } from '@/components/logo';
+import type { AdminView } from './admin-shell';
 
 export default function AdminPage() {
-  return (
-    <Suspense fallback={<AdminPageSkeleton />}>
-      <AdminPageContent />
-    </Suspense>
-  );
-}
+    const [activeView, setActiveView] = useState<AdminView>('add-course');
 
-function AdminPageSkeleton() {
     return (
-        <div className="flex w-full">
-            <div className="flex-1 flex justify-center p-4">
-                <div className="w-full max-w-2xl space-y-4">
-                    <Skeleton className="h-10 w-1/2" />
-                    <Skeleton className="h-8 w-3/4" />
-                    <div className="space-y-6 pt-4">
-                        <div className="space-y-2">
-                            <Skeleton className="h-4 w-1/4" />
-                            <Skeleton className="h-10 w-full" />
-                        </div>
-                        <div className="space-y-2">
-                            <Skeleton className="h-4 w-1/4" />
-                            <Skeleton className="h-20 w-full" />
-                        </div>
-                        <Skeleton className="h-10 w-full" />
-                    </div>
+        <div className="flex min-h-[calc(100vh-4rem)]">
+            <aside className="hidden md:flex flex-col w-64 bg-background border-r">
+                <div className="p-4 border-b">
+                    <Logo />
                 </div>
+                <AdminNav activeView={activeView} setActiveView={setActiveView} />
+            </aside>
+            <div className="flex-1 flex">
+                <AdminPageContent activeView={activeView} />
             </div>
         </div>
     )

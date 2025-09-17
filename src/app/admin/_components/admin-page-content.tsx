@@ -6,14 +6,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { courses, topics } from "@/lib/data";
-import { useSearchParams } from "next/navigation";
+import type { AdminView } from "../admin-shell";
 
-type AdminView = 'add-course' | 'add-topic' | 'add-sub-topic';
+type AdminPageContentProps = {
+    activeView: AdminView;
+}
 
-export function AdminPageContent() {
-    const searchParams = useSearchParams();
-    const activeView = (searchParams.get('view') as AdminView) || 'add-course';
-
+export function AdminPageContent({ activeView }: AdminPageContentProps) {
     const [selectedCourse, setSelectedCourse] = useState<string>(courses[0]?.id || '');
 
     const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -126,10 +125,8 @@ export function AdminPageContent() {
     }
 
     return (
-        <div className="flex w-full">
-             <div className="flex-1 flex justify-center p-4">
-                {renderContent()}
-            </div>
+        <div className="flex-1 flex justify-center p-4">
+            {renderContent()}
         </div>
     );
 }

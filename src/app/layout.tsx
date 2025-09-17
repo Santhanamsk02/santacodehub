@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'SantaCodeHub',
-  description: 'Learn to code with SantaCodeHub',
+  title: 'ProCode',
+  description: 'Learn to code with ProCode',
 };
 
 export default function RootLayout({

@@ -21,7 +21,7 @@ export function SubTopicGridCard({ subTopic, courseId }: SubTopicGridCardProps) 
             <CardDescription>{shortDescription}</CardDescription>
         </CardContent>
         <CardFooter className="pt-4">
-          <Button className="w-full neumorphic-button bg-foreground text-background hover:bg-foreground/90">
+          <Button className="w-full neumorphic-button bg-background text-foreground hover:bg-background/90">
             Study Topic
           </Button>
         </CardFooter>

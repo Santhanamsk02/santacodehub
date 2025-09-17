@@ -6,14 +6,15 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { courses, topics } from "@/lib/data";
-import { BookPlus, FilePlus, ListPlus } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useSearchParams } from "next/navigation";
 
 type AdminView = 'add-course' | 'add-topic' | 'add-sub-topic';
 
 export default function AdminPage() {
+    const searchParams = useSearchParams();
+    const activeView = (searchParams.get('view') as AdminView) || 'add-course';
+
     const [selectedCourse, setSelectedCourse] = useState<string>(courses[0]?.id || '');
-    const [activeView, setActiveView] = useState<AdminView>('add-course');
 
     const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedCourse(e.target.value);
@@ -126,11 +127,6 @@ export default function AdminPage() {
 
     return (
         <div className="flex w-full">
-            <nav className="w-64 p-4 space-y-2 border-r neumorphic-outset hidden lg:block">
-                 <Button variant="ghost" onClick={() => setActiveView('add-course')} className={cn('w-full justify-start', activeView === 'add-course' && 'neumorphic-inset bg-primary/10')}> <BookPlus className="mr-2 h-4 w-4"/> Add Course</Button>
-                 <Button variant="ghost" onClick={() => setActiveView('add-topic')} className={cn('w-full justify-start', activeView === 'add-topic' && 'neumorphic-inset bg-primary/10')}><ListPlus className="mr-2 h-4 w-4"/>Add Topic</Button>
-                 <Button variant="ghost" onClick={() => setActiveView('add-sub-topic')} className={cn('w-full justify-start', activeView === 'add-sub-topic' && 'neumorphic-inset bg-primary/10')}><FilePlus className="mr-2 h-4 w-4"/>Add Sub-Topic</Button>
-            </nav>
              <div className="flex-1 flex justify-center p-4">
                 {renderContent()}
             </div>

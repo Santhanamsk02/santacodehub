@@ -39,7 +39,7 @@ export default function LoginPage() {
             <div className="inline-block mx-auto p-4 bg-primary/20 rounded-full neumorphic-inset mb-4">
               <GraduationCap className="h-10 w-10 text-primary" />
             </div>
-            <CardTitle className="text-3xl font-bold font-headline">ProCode</CardTitle>
+            <CardTitle className="text-3xl font-bold font-headline">SantaCodeHub</CardTitle>
             <CardDescription>Enter your credentials to access your coding journey</CardDescription>
           </CardHeader>
           <CardContent>

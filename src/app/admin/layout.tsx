@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { UserNav } from '@/components/user-nav';
+import { AdminNav } from './_components/admin-nav';
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,9 +11,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         <div className="p-4 border-b">
           <Logo />
         </div>
-        <nav className="flex-1 p-4 space-y-2">
-            {/* The active view will be managed within the page component */}
-        </nav>
+        <AdminNav />
       </aside>
       <div className="flex flex-col flex-1">
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">

@@ -6,6 +6,7 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { CodeSnippet } from './code-snippet';
 import { Separator } from '../ui/separator';
+import Image from 'next/image';
 
 export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
   const [language, setLanguage] = useState<'english' | 'tanglish'>('english');
@@ -39,8 +40,17 @@ export function SubTopicCard({ subTopic }: { subTopic: SubTopic }) {
         </div>
         <Separator className='bg-border/50'/>
         <div>
-          <h3 className="text-lg font-semibold mb-2 font-headline">Key Concepts</h3>
-          <p className="text-muted-foreground">This section can be used to highlight key concepts from the topic. You can add more detailed explanations, lists, or even images here.</p>
+           <h3 className="text-lg font-semibold mb-4 font-headline">Visual Concept</h3>
+           <div className="neumorphic-inset p-2 rounded-lg">
+             <Image 
+                src={subTopic.imageUrl} 
+                alt={subTopic.title}
+                width={600}
+                height={400}
+                className="rounded-md w-full"
+                data-ai-hint="abstract illustration"
+              />
+            </div>
         </div>
       </CardContent>
     </Card>

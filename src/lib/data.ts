@@ -19,6 +19,7 @@ export type SubTopic = {
   contentTl: string;
   codeJava: string;
   codeC: string;
+  imageUrl: string;
 };
 
 export const courses: Course[] = [
@@ -66,6 +67,7 @@ export const subTopics: SubTopic[] = [
     contentTl: 'Java oru high-level, class-based, object-oriented programming language. Athuku adhigama implementation dependencies irukathu.',
     codeJava: `public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}`,
     codeC: `// C doesn't have classes in the same way as Java\n// This is a simple C program\n#include <stdio.h>\n\nint main() {\n   printf("Hello, World!");\n   return 0;\n}`,
+    imageUrl: 'https://picsum.photos/seed/java-concept/600/400',
   },
   {
     id: 'st-jb-2-1',
@@ -75,6 +77,7 @@ export const subTopics: SubTopic[] = [
     contentTl: 'Java-la, ettu primitive data types iruku: byte, short, int, long, float, double, boolean, and char.',
     codeJava: `int myNum = 5;               // Integer (whole number)\nfloat myFloatNum = 5.99f;    // Floating point number\nchar myLetter = 'D';         // Character\nboolean myBool = true;       // Boolean`,
     codeC: `int myNum = 5;               // Integer\nfloat myFloatNum = 5.99;     // Float\nchar myLetter = 'D';         // Character\n// C uses 1 for true and 0 for false`,
+    imageUrl: 'https://picsum.photos/seed/data-types/600/400',
   },
     {
     id: 'st-cr-1-1',
@@ -84,5 +87,6 @@ export const subTopics: SubTopic[] = [
     contentTl: 'main function thaan ella C program-oda entry point. stdio.h header file-la printf() mathiri standard input/output functions irukum.',
     codeJava: `// This is Java, not C\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("This is Java!");\n    }\n}`,
     codeC: `#include <stdio.h>\n\nint main() {\n   printf("Hello from C!");\n   return 0;\n}`,
+    imageUrl: 'https://picsum.photos/seed/c-program/600/400',
   },
 ];

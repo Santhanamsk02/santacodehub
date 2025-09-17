@@ -12,7 +12,7 @@ export default function LoginPage() {
 
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
-    router.push('/dashboard');
+    router.push('/courses');
   };
 
   return (

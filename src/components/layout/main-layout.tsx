@@ -1,7 +1,7 @@
 'use client';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { LayoutDashboard, BookOpen, Search, PanelLeft } from 'lucide-react';
+import { BookOpen, Search, PanelLeft } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Logo } from '@/components/logo';
 import { UserNav } from '@/components/user-nav';
@@ -12,10 +12,6 @@ export function MainLayout({ children }: { children: ReactNode }) {
 
     const sidebarNav = (
         <nav className="flex-1 p-4 space-y-2">
-            <Link href="/dashboard" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary neumorphic-button">
-                <LayoutDashboard className="h-4 w-4" />
-                Dashboard
-            </Link>
             <Link href="/courses" className="flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary neumorphic-inset bg-primary/10">
                 <BookOpen className="h-4 w-4" />
                 Courses
